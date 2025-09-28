@@ -1,4 +1,6 @@
 import { Geist, Geist_Mono } from "next/font/google";
+import { Provider } from "@/utils/Provider";
+import Navbar from "@/components/NavBar"; //Ojo con el doble Navbar
 import "./globals.css";
 
 const geistSans = Geist({
@@ -19,11 +21,15 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
-      >
-        {children}
-      </body>
-    </html>
+    <body
+      // className={`${firaCode.className} h-full bg-amber-50 text-indigo-950 dark:bg-slate-950 dark:text-amber-50 dark:selection:bg-purple-500`}
+      className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+    >
+      <Provider>
+        <Navbar />
+        <main className="h-full mx-auto max-w-5xl px-6">{children}</main>
+      </Provider>
+    </body>
+  </html>
   );
 }
