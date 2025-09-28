@@ -1,6 +1,6 @@
 import { Geist, Geist_Mono } from "next/font/google";
-import { Provider } from "@/utils/Provider";
-import Navbar from "@/components/NavBar"; //Ojo con el doble Navbar
+import { Provider } from "../utils/Provider";
+import Navbar from "../components/NavBar"; //Ojo con el doble Navbar
 import "./globals.css";
 
 const geistSans = Geist({

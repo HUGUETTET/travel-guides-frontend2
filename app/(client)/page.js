@@ -6,7 +6,7 @@
 //   );
 // }
 
-import TestCRUD from "@/components/TestCRUD";
+import TestCRUD from "../components/TestCRUD";
 
 export default function Home() {
   return (
