@@ -2,7 +2,7 @@ import Header from "../../../components/Header";
 // import Toc from "@/app/components/Toc";
 import { slugify } from "../../../utils/helpers";
 import { client } from "../../../../sanity/lib/client";
-import { urlForImage } from "../../../../sanity/lib/image";
+import { urlForImage } from "../../../utils/helpers"; 
 import { PortableText } from "@portabletext/react";
 import { VT323 } from "next/font/google";
 import Image from "next/image";
@@ -14,12 +14,6 @@ const dateFont = VT323({ weight: "400", subsets: ["latin"] });
 
 export const revalidate = 60;
 
-// export const params= {
-//       slug: string,
-//     };
-// export const searchParams= {
-//     [key= string]: string | string[any] | undefined,
-// };
 async function getPost(slug) {
     const query = `
     *[_type == "post" && slug.current == "${slug}"][0] {
@@ -42,10 +36,11 @@ async function getPost(slug) {
     return post;
   }
 
-// 🔹 Quitar tipado de retorno
+const FRONTEND_URL = process.env.NEXT_PUBLIC_FRONTEND_URL;
+
 export async function generateMetadata({ params }) {
-    const { slug } = await params;
-    const post = await getPost(slug);
+  const { slug } = await params;
+  const post = await getPost(slug);
   if (!post) {
     return;
   }
@@ -53,19 +48,27 @@ export async function generateMetadata({ params }) {
   return {
     title: post.title,
     description: post.excerpt,
-    // openGraph: {
-    //   title: post.title,
-    //   description: post.excerpt,
-    //   type: "article",
-    //   locale: "en_US",
-    //   url: `https://next-cms-blog-ce.vercel.app/${params.slug}`,
-    //   siteName: "DevBlook",
-    //   images: [],
-    // },
+    openGraph: {
+      title: post.title,
+      description: post.excerpt,
+      type: "article",
+      locale: "en_US",
+      url: FRONTEND_URL +`/${slug}`,
+      siteName: "DevBlook",
+      images: [
+        // {
+        //   url: post.image,
+        // }
+        // {
+        //   url: urlForImage(post?.body?.find((b: any) => b._type === "image")).width(1200).height(630).url(),
+        //   width: 1200,
+        //   height: 630,
+        // },
+      ],
+    },
   };
 }
 
-// 🔹 Quitar tipado de params y post
 const page = async ({ params }) => {
     const { slug } = await params;
     const post = await getPost(slug);
