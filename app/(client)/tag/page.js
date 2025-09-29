@@ -20,13 +20,13 @@ async function getAllTags() {
 
 export const revalidate = 60;
 
-// export const metadata: Metadata = {
-//   title: "Tags",
-//   // title: {
-//   //   absolute: "TAGS",
-//   // },
-//   description: "Search for posts by tags on the blog"
-// }
+export const metadata = {
+    title: "Tags",
+    // title: {
+    //   absolute: "TAGS",
+    // },
+    description: "Search for posts by tags on the blog"
+  }
 
 const page = async () => {
   const tags = await getAllTags();

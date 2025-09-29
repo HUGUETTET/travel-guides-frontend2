@@ -51,7 +51,12 @@ export default async function Home() {
       <Header title="Articles" tags />
       <div>
         {posts?.length > 0 &&
-          posts?.map((post) => <PostComponent key={post?._id} post={post} />)}
+          // posts?.map((post) => <PostComponent key={post?._id} post={post} />)}
+        posts?.map((post) => (
+          <PostComponent key={post?._id || post.slug?.current} post={post} />
+        ))
+        }
+
       </div>
       <TestCRUD></TestCRUD>
     </div>
