@@ -1,4 +1,4 @@
-// export interface Post {
+// export const Post {
 //     title: string
 //     slug: { current: string };
 //     publishedAt: string;
@@ -10,14 +10,14 @@
 //     comments?: Array<Comment>;
 //   }
   
-//   export interface Tag {
+//   export const Tag {
 //     name: string;
 //     slug: { current: string };
 //     _id: string;
 //     postCount?: number
 //   }
   
-//   export interface Comment {
+//   export const Comment {
 //     name: string;
 //     comment: string;
 //     _createdAt: string;
