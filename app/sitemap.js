@@ -25,7 +25,7 @@ export default async function sitemap() {
   const posts= await getPosts();
 
   const postUrls = posts.map((post) => ({
-    url: FRONTEND_URL + `${post.slug.current}`,
+    url: FRONTEND_URL + `/${post.slug.current}`,
     lastModified: new Date(post.publishedAt),
   }))
 
