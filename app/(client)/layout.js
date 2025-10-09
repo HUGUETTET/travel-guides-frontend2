@@ -1,6 +1,7 @@
 import { Geist, Geist_Mono } from "next/font/google";
 import { Provider } from "../utils/Provider";
 import Navbar from "../components/NavBar"; //Ojo con el doble Navbar
+import { Header2 } from "../components/Header2"; 
 import "./globals.css";
 
 const geistSans = Geist({
@@ -42,6 +43,7 @@ export default function RootLayout({ children }) {
     >
       <Provider>
         <Navbar />
+        <Header2></Header2>
         <main className="h-full mx-auto max-w-5xl px-6">{children}</main>
       </Provider>
     </body>
