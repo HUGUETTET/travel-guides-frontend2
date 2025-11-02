@@ -4,6 +4,7 @@ import Link from "next/link"
 import { useState } from "react"
 import { Menu, X, Search } from "lucide-react"
 import { useRouter } from "next/navigation"
+import { siteConfig } from '@/lib/siteConfig'
 
 export function Header2() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
@@ -27,7 +28,7 @@ export function Header2() {
       <nav className="mx-auto flex max-w-7xl items-center justify-between p-4 lg:px-8">
         <div className="flex lg:flex-1">
           <Link href="/" className="-m-1.5 p-1.5">
-            <span className="text-2xl font-bold text-foreground">Viajeros Sin Límites</span>
+            <span className="text-2xl font-bold text-foreground">{siteConfig.name}</span>
           </Link>
         </div>
 
@@ -69,7 +70,7 @@ export function Header2() {
           <div className="fixed inset-y-0 right-0 z-50 w-full overflow-y-auto bg-background px-6 py-6 sm:max-w-sm sm:ring-1 sm:ring-border">
             <div className="flex items-center justify-between">
               <Link href="/" className="-m-1.5 p-1.5">
-                <span className="text-xl font-bold">Viajeros Sin Límites</span>
+                <span className="text-xl font-bold">{siteConfig.name}</span>
               </Link>
               <button
                 type="button"

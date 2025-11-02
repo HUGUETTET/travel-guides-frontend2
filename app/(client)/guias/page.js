@@ -4,9 +4,10 @@ import { Badge } from "../../components/ui/badge"
 import { urlFor } from "../../../lib/image-url"
 import Link from "next/link"
 import { Clock, Calendar, MapPin } from "lucide-react"
+import { siteConfig } from '@/lib/siteConfig'
 
 export const metadata = {
-  title: "Guías de Viaje - Viajeros Sin Límites",
+  title: `Guías de Viaje - ${siteConfig.name}`,
   description: "Guías completas de viaje con itinerarios, presupuestos y consejos prácticos para cada destino.",
 }
 

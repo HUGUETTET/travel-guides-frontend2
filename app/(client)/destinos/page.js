@@ -1,11 +1,12 @@
 import { getAllDestinations } from "../../../lib/sanity"
+import { siteConfig } from '@/lib/siteConfig'
 // import { Card, CardContent } from "@/components/ui/card"
 // import { urlFor } from "@/lib/image-url"
 // import Link from "next/link"
 // import { MapPin } from "lucide-react"
 
 export const metadata = {
-  title: "Destinos - Viajeros Sin Límites",
+  title: `Destinos - ${siteConfig.name}`,
   description: "Explora destinos increíbles alrededor del mundo con nuestras guías y recomendaciones.",
 }
 

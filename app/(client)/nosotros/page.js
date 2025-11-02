@@ -1,8 +1,9 @@
 // import { Card, CardContent } from "@/components/ui/card"
 import { Globe, Heart, Users, Compass } from "lucide-react"
+import { siteConfig } from '@/lib/siteConfig'
 
 export const metadata = {
-  title: "Nosotros - Viajeros Sin Límites",
+  title: `Nosotros - ${siteConfig.name}`,
   description: "Conoce nuestra historia y misión de inspirar viajeros alrededor del mundo.",
 }
 
@@ -58,7 +59,7 @@ export default function AboutPage() {
     //       <div className="prose prose-lg max-w-none">
     //         <h2 className="text-3xl font-bold text-foreground mb-6">Nuestra Historia</h2>
     //         <p className="text-muted-foreground leading-relaxed mb-4">
-    //           Viajeros Sin Límites nació de una pasión compartida por explorar el mundo y el deseo de ayudar a otros a
+    //           {siteConfig.name} nació de una pasión compartida por explorar el mundo y el deseo de ayudar a otros a
     //           hacer realidad sus sueños de viaje. Lo que comenzó como un blog personal se ha convertido en una
     //           plataforma completa de recursos para viajeros de habla hispana.
     //         </p>
